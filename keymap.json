@@ -1,0 +1,1193 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt shift left": "editor::TabPrev"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == visual || vim_mode == normal)",
+    "use_layout_keys": true,
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "enter": ["workspace::SendKeystrokes", "[ x"],
+      "backspace": ["workspace::SendKeystrokes", "] x"],
+      "space e": ["workspace::SendKeystrokes", "cmd-b"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "use_layout_keys": true,
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      // File actions
+      "space f s": "workspace::Save",
+      "space f r": "projects::OpenRecent",
+      "enter": "editor::SelectLargerSyntaxNode",
+      "backspace": "editor::SelectSmallerSyntaxNode",
+      "space e": ["workspace::SendKeystrokes", "cmd-b"]
+    }
+  },
+  {
+    "context": "ProjectPanel || CollabPanel || OutlinePanel || ChatPanel || VimControl || EmptyPane || SharedScreen || MarkdownPreview || KeyContextView",
+    "bindings": {
+      // window related commands (ctrl-w X)
+      "ctrl-w": null,
+      "alt-left": ["workspace::ActivatePaneInDirection", "Left"],
+      "alt-right": ["workspace::ActivatePaneInDirection", "Right"],
+      "alt-up": ["workspace::ActivatePaneInDirection", "Up"],
+      "alt-down": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  }
+]
+
+// 11:34:46 msg_show   map n  <CR>        *@<Lua 1666: ~/.local/share/nvim/lazy/nvim-treesitter/lua/nvim-treesitter/incremental_selection.lua:15>
+//                  Start selecting nodes with nvim-treesitter
+// x  <CR>        *@<Lua 1667: ~/.local/share/nvim/lazy/nvim-treesitter/lua/nvim-treesitter/incremental_selection.lua:58>
+//                  Increment selection to named node
+// n  <Space>cr   *@<Lua 1721: /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/lua/vim/lsp/buf.lua:298>
+//                  Rename
+// n  <Space>cA   *@<Lua 1022: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/lsp.lua:208>
+//                  Source Action
+// n  <Space>cR   *@<Cmd>ClangdSwitchSourceHeader<CR>
+//                  Switch Source/Header (C/C++)
+// v  <Space>ca   *@<Lua 1970: /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/lua/vim/lsp/buf.lua:830>
+//                  Code Action
+// n  <Space>ca   *@<Lua 1954: /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/lua/vim/lsp/buf.lua:830>
+//                  Code Action
+// n  <Space>cl   *@<Cmd>LspInfo<CR>
+//                  Lsp Info
+// x  <nop>       *@<Lua 1665: ~/.local/share/nvim/lazy/nvim-treesitter/lua/nvim-treesitter/incremental_selection.lua:58>
+//                  Increment selection to surrounding scope
+// n  K           *@<Lua 1949: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/lsp/keymaps.lua:22>
+//                  Hover
+// n  [[          *@<Lua 1950: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/lsp/keymaps.lua:33>
+//                  Prev Reference
+// o  [A          *@<Lua 1706: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous end @parameter.inner
+// x  [A          *@<Lua 1705: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous end @parameter.inner
+// n  [A          *@<Lua 1704: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous end @parameter.inner
+// o  [F          *@<Lua 1703: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous end @function.outer
+// x  [F          *@<Lua 1702: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous end @function.outer
+// n  [F          *@<Lua 1701: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous end @function.outer
+// o  [C          *@<Lua 1700: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous end @class.outer
+// x  [C          *@<Lua 1699: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous end @class.outer
+// n  [C          *@<Lua 1698: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous end @class.outer
+// o  [f          *@<Lua 1697: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous start @function.outer
+// x  [f          *@<Lua 1696: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous start @function.outer
+// n  [f          *@<Lua 1695: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous start @function.outer
+// o  [a          *@<Lua 1694: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous start @parameter.inner
+// x  [a          *@<Lua 1693: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous start @parameter.inner
+// n  [a          *@<Lua 1692: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous start @parameter.inner
+// o  [c          *@<Lua 1691: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous start @class.outer
+// x  [c          *@<Lua 1690: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous start @class.outer
+// n  [c          *@<Lua 1689: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto previous start @class.outer
+// n  ]]          *@<Lua 1946: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/lsp/keymaps.lua:31>
+//                  Next Reference
+// o  ]F          *@<Lua 1688: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next end @function.outer
+// x  ]F          *@<Lua 1687: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next end @function.outer
+// n  ]F          *@<Lua 1686: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next end @function.outer
+// o  ]C          *@<Lua 1685: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next end @class.outer
+// x  ]C          *@<Lua 1684: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next end @class.outer
+// n  ]C          *@<Lua 1683: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next end @class.outer
+// o  ]A          *@<Lua 1682: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next end @parameter.inner
+// x  ]A          *@<Lua 1681: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next end @parameter.inner
+// n  ]A          *@<Lua 1680: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next end @parameter.inner
+// o  ]c          *@<Lua 1679: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next start @class.outer
+// x  ]c          *@<Lua 1678: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next start @class.outer
+// n  ]c          *@<Lua 1677: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next start @class.outer
+// o  ]a          *@<Lua 1676: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next start @parameter.inner
+// x  ]a          *@<Lua 1675: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next start @parameter.inner
+// n  ]a          *@<Lua 1674: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next start @parameter.inner
+// o  ]f          *@<Lua 1673: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next start @function.outer
+// x  ]f          *@<Lua 1672: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next start @function.outer
+// n  ]f          *@<Lua 1661: ~/.local/share/nvim/lazy/nvim-treesitter-textobjects/lua/nvim-treesitter/textobjects/attach.lua:44>
+//                  Goto next start @function.outer
+// n  gI          *@<Lua 1722: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/telescope.lua:298>
+//                  Goto Implementation
+// n  gy          *@<Lua 1957: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/telescope.lua:299>
+//                  Goto T[y]pe Definition
+// n  gD          *@<Lua 1044: /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/lua/vim/lsp/buf.lua:86>
+//                  Goto Declaration
+// n  gK          *@<Lua 1034: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/lsp/keymaps.lua:23>
+//                  Signature Help
+// n  gd          *@<Lua 1726: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/telescope.lua:296>
+//                  Goto Definition
+// n  gr          *@<Cmd>Telescope lsp_references<CR>
+//                  References
+// n  <M-n>       *@<Lua 1948: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/lsp/keymaps.lua:35>
+//                  Next Reference
+// n  <M-p>       *@<Lua 1947: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/lsp/keymaps.lua:37>
+//                  Prev Reference
+// x  <BS>        *@<Lua 1668: ~/.local/share/nvim/lazy/nvim-treesitter/lua/nvim-treesitter/incremental_selection.lua:118>
+//                  Shrink selection to previous named node
+// s  <Tab>       * <Lua 673: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:186>
+//                  Jump Next
+// n  <Esc>       * <Cmd>noh<CR><Esc>
+//                  Escape and Clear hlsearch
+// n  <Space>xT   * <Cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<CR>
+//                  Todo/Fix/Fixme (Trouble)
+// n  <Space>xt   * <Cmd>Trouble todo toggle<CR>
+//                  Todo (Trouble)
+// n  <Space>sT   * <Cmd>TodoTelescope keywords=TODO,FIX,FIXME<CR>
+//                  Todo/Fix/Fixme
+// n  <Space>st   * <Cmd>TodoTelescope<CR>
+//                  Todo
+// n  <Space>ug   * <Lua 987: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Indention Guides
+// n  <Space>ux   * <Lua 1541: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Illuminate
+// x  <Space>p    * <Lua 187: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/coding/yanky.lua:13>
+//                  Open Yank History
+// n  <Space>p    * <Lua 186: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/coding/yanky.lua:13>
+//                  Open Yank History
+// n  <Space>ql   * <Lua 259: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/util.lua:14>
+//                  Restore Last Session
+// n  <Space>qS   * <Lua 258: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/util.lua:13>
+//                  Select Session
+// n  <Space>qs   * <Lua 257: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/util.lua:12>
+//                  Restore Session
+// n  <Space>qd   * <Lua 256: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/util.lua:15>
+//                  Don't Save Current Session
+// n  <Space>rc   * <Lua 142: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/refactoring.lua:76>
+//                  Debug Cleanup
+// n  <Space>rp   * <Lua 141: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/refactoring.lua:69>
+//                  Debug Print Variable
+// n  <Space>rP   * <Lua 140: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/refactoring.lua:62>
+//                  Debug Print
+// n  <Space>rf   * <Lua 139: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/refactoring.lua:55>
+//                  Extract Block To File
+// n  <Space>rb   * <Lua 138: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/refactoring.lua:48>
+//                  Extract Block
+// v  <Space>ri   * <Lua 137: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/refactoring.lua:40>
+//                  Inline Variable
+// n  <Space>ri   * <Lua 136: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/refactoring.lua:40>
+//                  Inline Variable
+// v  <Space>rs   * <Lua 135: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/refactoring.lua:1>
+//                  Refactor
+// v  <Space>rp   * <Lua 134: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/refactoring.lua:107>
+//                  Debug Print Variable
+// v  <Space>r    * <Nop>
+//                  +refactor
+// n  <Space>r    * <Nop>
+//                  +refactor
+// v  <Space>rx   * <Lua 133: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/refactoring.lua:99>
+//                  Extract Variable
+// v  <Space>rF   * <Lua 132: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/refactoring.lua:91>
+//                  Extract Function To File
+// v  <Space>rf   * <Lua 130: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/refactoring.lua:83>
+//                  Extract Function
+// n  <Space><Tab>[ * <Cmd>tabprevious<CR>
+//                  Previous Tab
+// n  <Space><Tab>d * <Cmd>tabclose<CR>
+//                  Close Tab
+// n  <Space><Tab>] * <Cmd>tabnext<CR>
+//                  Next Tab
+// n  <Space><Tab><Tab> * <Cmd>tabnew<CR>
+//                  New Tab
+// n  <Space><Tab>f * <Cmd>tabfirst<CR>
+//                  First Tab
+// n  <Space><Tab>o * <Cmd>tabonly<CR>
+//                  Close Other Tabs
+// n  <Space><Tab>l * <Cmd>tablast<CR>
+//                  Last Tab
+// n  <Space>wm   * <Lua 672: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Maximize
+// n  <Space>wd   * <C-W>c
+//                  Delete Window
+// n  <Space>|    * <C-W>v
+//                  Split Window Right
+// n  <Space>-    * <C-W>s
+//                  Split Window Below
+// n  <Space>w    * <C-W>
+//                  Windows
+// n  <Space>ft   * <Lua 669: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:160>
+//                  Terminal (Root Dir)
+// n  <Space>fT   * <Lua 668: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:159>
+//                  Terminal (cwd)
+// n  <Space>L    * <Lua 667: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:156>
+//                  LazyVim Changelog
+// n  <Space>uI   * <Cmd>InspectTree<CR>
+//                  Inspect Tree
+// n  <Space>ui   * <Lua 666: /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/lua/vim/_inspector.lua:152>
+//                  Inspect Pos
+// n  <Space>qq   * <Cmd>qa<CR>
+//                  Quit All
+// n  <Space>gL   * <Lua 665: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:145>
+//                  Lazygit Log (cwd)
+// n  <Space>gl   * <Lua 664: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:144>
+//                  Lazygit Log
+// n  <Space>gf   * <Lua 663: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:143>
+//                  Lazygit Current File History
+// n  <Space>gB   * <Lua 662: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:142>
+//                  Git Browse
+// n  <Space>gb   * <Lua 661: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:141>
+//                  Git Blame Line
+// n  <Space>gG   * <Lua 660: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:140>
+//                  Lazygit (cwd)
+// n  <Space>gg   * <Lua 659: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:139>
+//                  Lazygit (Root Dir)
+// n  <Space>uh   * <Lua 658: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Inlay Hints
+// n  <Space>ub   * <Lua 653: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Dark Background
+// n  <Space>uT   * <Lua 652: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Treesitter Highlight
+// n  <Space>uc   * <Lua 651: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle conceallevel
+// n  <Space>ul   * <Lua 650: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Line Numbers
+// n  <Space>ud   * <Lua 649: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Diagnostics
+// n  <Space>uL   * <Lua 648: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Relative Number
+// n  <Space>uw   * <Lua 647: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Wrap
+// n  <Space>us   * <Lua 636: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Spelling
+// n  <Space>uF   * <Lua 637: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Auto Format (Buffer)
+// n  <Space>uf   * <Lua 638: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Auto Format (Global)
+// n  <Space>cd   * <Lua 643: /opt/homebrew/Cellar/neovim/0.10.1/share/nvim/runtime/lua/vim/diagnostic.lua:1694>
+//                  Line Diagnostics
+// v  <Space>cf   * <Lua 644: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:100>
+//                  Format
+// n  <Space>cf   * <Lua 645: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:100>
+//                  Format
+// n  <Space>xq   * <Cmd>copen<CR>
+//                  Quickfix List
+// n  <Space>xl   * <Cmd>lopen<CR>
+//                  Location List
+// n  <Space>fn   * <Cmd>enew<CR>
+//                  New File
+// n  <Space>l    * <Cmd>Lazy<CR>
+//                  Lazy
+// n  <Space>K    * <Cmd>norm! K<CR>
+//                  Keywordprg
+// n  <Space>ur   * <Cmd>nohlsearch|diffupdate|normal! <C-L><CR>
+//                  Redraw / Clear hlsearch / Diff Update
+// n  <Space>bD   * <Cmd>:bd<CR>
+//                  Delete Buffer and Window
+// n  <Space>bo   * <Lua 646: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:43>
+//                  Delete Other Buffers
+// n  <Space>bd   * <Lua 50: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:40>
+//                  Delete Buffer
+// n  <Space>`    * <Cmd>e #<CR>
+//                  Switch to Other Buffer
+// n  <Space>bb   * <Cmd>e #<CR>
+//                  Switch to Other Buffer
+// n  <Space>bl   * <Cmd>BufferLineCloseLeft<CR>
+//                  Delete Buffers to the Left
+// n  <Space>br   * <Cmd>BufferLineCloseRight<CR>
+//                  Delete Buffers to the Right
+// n  <Space>bP   * <Cmd>BufferLineGroupClose ungrouped<CR>
+//                  Delete Non-Pinned Buffers
+// n  <Space>bp   * <Cmd>BufferLineTogglePin<CR>
+//                  Toggle Pin
+// n  <Space>xQ   * <Cmd>Trouble qflist toggle<CR>
+//                  Quickfix List (Trouble)
+// n  <Space>xL   * <Cmd>Trouble loclist toggle<CR>
+//                  Location List (Trouble)
+// n  <Space>cS   * <Cmd>Trouble lsp toggle<CR>
+//                  LSP references/definitions/... (Trouble)
+// n  <Space>xX   * <Cmd>Trouble diagnostics toggle filter.buf=0<CR>
+//                  Buffer Diagnostics (Trouble)
+// n  <Space>xx   * <Cmd>Trouble diagnostics toggle<CR>
+//                  Diagnostics (Trouble)
+// n  <Space>ut   * <Lua 555: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Treesitter Context
+// n  <Space>up   * <Lua 511: ~/.local/share/nvim/lazy/snacks.nvim/lua/snacks/toggle.lua:83>
+//                  Toggle Mini Pairs
+// n  <Space>sna  * <Lua 48: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/ui.lua:268>
+//                  Noice All
+// n  <Space>snh  * <Lua 47: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/ui.lua:267>
+//                  Noice History
+// n  <Space>snl  * <Lua 46: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/ui.lua:266>
+//                  Noice Last Message
+// n  <Space>sn   * <Nop>
+//                  +noice
+// n  <Space>snt  * <Lua 38: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/ui.lua:270>
+//                  Noice Picker (Telescope/FzfLua)
+// n  <Space>snd  * <Lua 35: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/ui.lua:269>
+//                  Dismiss All
+// n  <Space>go   * <Lua 203: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/mini-diff.lua:15>
+//                  Toggle mini.diff overlay
+// n  <Space>fE   * <Lua 225: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/editor.lua:17>
+//                  Explorer NeoTree (cwd)
+// n  <Space>fe   * <Lua 224: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/editor.lua:10>
+//                  Explorer NeoTree (Root Dir)
+// n  <Space>be   * <Lua 223: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/editor.lua:33>
+//                  Buffer Explorer
+// n  <Space>ge   * <Lua 222: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/editor.lua:26>
+//                  Git Explorer
+// n  <Space>E      <Space>fE
+//                  Explorer NeoTree (cwd)
+// n  <Space>e      <Space>fe
+//                  Explorer NeoTree (Root Dir)
+// n  <Space>?    * <Lua 81: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/editor.lua:220>
+//                  Buffer Keymaps (which-key)
+// n  <Space>fs   * <Cmd>write<CR>
+//                  Save file
+// n  <Space>un   * <Lua 162: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/init.lua:50>
+//                  Dismiss All Notifications
+// n  <Space>cm   * <Cmd>Mason<CR>
+//                  Mason
+// n  <Space>du   * <Lua 213: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:87>
+//                  Dap UI
+// v  <Space>de   * <Lua 212: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:88>
+//                  Eval
+// n  <Space>de   * <Lua 209: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:88>
+//                  Eval
+// n  <Space>td   * <Lua 67: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/test/core.lua:125>
+//                  Debug Nearest
+// n  <Space>dw   * <Lua 66: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:53>
+//                  Widgets
+// n  <Space>dt   * <Lua 65: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:52>
+//                  Terminate
+// n  <Space>ds   * <Lua 64: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:51>
+//                  Session
+// n  <Space>dr   * <Lua 63: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:50>
+//                  Toggle REPL
+// n  <Space>dp   * <Lua 62: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:49>
+//                  Pause
+// n  <Space>dO   * <Lua 61: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:48>
+//                  Step Over
+// n  <Space>do   * <Lua 60: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:47>
+//                  Step Out
+// n  <Space>dl   * <Lua 59: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:46>
+//                  Run Last
+// n  <Space>dk   * <Lua 58: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:45>
+//                  Up
+// n  <Space>dj   * <Lua 57: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:44>
+//                  Down
+// n  <Space>di   * <Lua 56: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:43>
+//                  Step Into
+// n  <Space>dg   * <Lua 55: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:42>
+//                  Go to Line (No Execute)
+// n  <Space>dC   * <Lua 54: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:41>
+//                  Run to Cursor
+// n  <Space>da   * <Lua 53: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:40>
+//                  Run with Args
+// n  <Space>dc   * <Lua 52: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:39>
+//                  Run/Continue
+// n  <Space>db   * <Lua 51: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:38>
+//                  Toggle Breakpoint
+// n  <Space>dB   * <Lua 49: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/dap/core.lua:37>
+//                  Breakpoint Condition
+// v  <Space>d    * <Nop>
+//                  +debug
+// n  <Space>d    * <Nop>
+//                  +debug
+// n  <Space>sj   * <Cmd>Telescope jumplist<CR>
+//                  Jumplist
+// n  <Space>sS   * <Lua 332: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/telescope.lua:152>
+//                  Goto Symbol (Workspace)
+// n  <Space>ss   * <Lua 331: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/telescope.lua:143>
+//                  Goto Symbol
+// n  <Space>uC   * <Lua 330: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/pick.lua:82>
+//                  Colorscheme with Preview
+// v  <Space>sW   * <Lua 329: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/pick.lua:82>
+//                  Selection (cwd)
+// v  <Space>sw   * <Lua 328: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/pick.lua:82>
+//                  Selection (Root Dir)
+// n  <Space>sW   * <Lua 327: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/pick.lua:82>
+//                  Word (cwd)
+// n  <Space>sw   * <Lua 326: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/pick.lua:82>
+//                  Word (Root Dir)
+// n  <Space>sq   * <Cmd>Telescope quickfix<CR>
+//                  Quickfix List
+// n  <Space>sR   * <Cmd>Telescope resume<CR>
+//                  Resume
+// n  <Space>so   * <Cmd>Telescope vim_options<CR>
+//                  Options
+// n  <Space>sm   * <Cmd>Telescope marks<CR>
+//                  Jump to Mark
+// n  <Space>sM   * <Cmd>Telescope man_pages<CR>
+//                  Man Pages
+// n  <Space>sl   * <Cmd>Telescope loclist<CR>
+//                  Location List
+// n  <Space>sk   * <Cmd>Telescope keymaps<CR>
+//                  Key Maps
+// n  <Space><Space> * <Lua 318: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/pick.lua:82>
+//                  Find Files (Root Dir)
+// n  <Space>sH   * <Cmd>Telescope highlights<CR>
+//                  Search Highlight Groups
+// n  <Space>sh   * <Cmd>Telescope help_tags<CR>
+//                  Help Pages
+// n  <Space>sG   * <Lua 315: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/pick.lua:82>
+//                  Grep (cwd)
+// n  <Space>sg   * <Lua 314: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/pick.lua:82>
+//                  Grep (Root Dir)
+// n  <Space>sD   * <Cmd>Telescope diagnostics<CR>
+//                  Workspace Diagnostics
+// n  <Space>sd   * <Cmd>Telescope diagnostics bufnr=0<CR>
+//                  Document Diagnostics
+// n  <Space>sC   * <Cmd>Telescope commands<CR>
+//                  Commands
+// n  <Space>sc   * <Cmd>Telescope command_history<CR>
+//                  Command History
+// n  <Space>sb   * <Cmd>Telescope current_buffer_fuzzy_find<CR>
+//                  Buffer
+// n  <Space>sa   * <Cmd>Telescope autocommands<CR>
+//                  Auto Commands
+// n  <Space>s"   * <Cmd>Telescope registers<CR>
+//                  Registers
+// n  <Space>gs   * <Cmd>Telescope git_status<CR>
+//                  Status
+// n  <Space>gc   * <Cmd>Telescope git_commits<CR>
+//                  Commits
+// n  <Space>fR   * <Lua 304: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/pick.lua:82>
+//                  Recent (cwd)
+// n  <Space>fr   * <Cmd>Telescope oldfiles<CR>
+//                  Recent
+// n  <Space>fg   * <Cmd>Telescope git_files<CR>
+//                  Find Files (git-files)
+// n  <Space>fF   * <Lua 301: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/pick.lua:82>
+//                  Find Files (cwd)
+// n  <Space>ff   * <Lua 300: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/pick.lua:82>
+//                  Find Files (Root Dir)
+// n  <Space>fc   * <Lua 299: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/pick.lua:82>
+//                  Find Config File
+// n  <Space>fb   * <Cmd>Telescope buffers sort_mru=true sort_lastused=true ignore_current_buffer=true<CR>
+//                  Buffers
+// n  <Space>:    * <Cmd>Telescope command_history<CR>
+//                  Command History
+// n  <Space>/    * <Lua 296: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/util/pick.lua:82>
+//                  Grep (Root Dir)
+// n  <Space>,    * <Cmd>Telescope buffers sort_mru=true sort_lastused=true<CR>
+//                  Switch Buffer
+// n  <Space>oi   * <Cmd>OverseerInfo<CR>
+//                  Overseer Info
+// n  <Space>oq   * <Cmd>OverseerQuickAction<CR>
+//                  Action recent task
+// n  <Space>oo   * <Cmd>OverseerRun<CR>
+//                  Run task
+// n  <Space>ow   * <Cmd>OverseerToggle<CR>
+//                  Task list
+// n  <Space>oc   * <Cmd>OverseerClearCache<CR>
+//                  Clear cache
+// n  <Space>ot   * <Cmd>OverseerTaskAction<CR>
+//                  Task action
+// n  <Space>ob   * <Cmd>OverseerBuild<CR>
+//                  Task builder
+// n  <Space>cs   * <Lua 339: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Toggle Outline
+// v  <Space>sr   * <Lua 337: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Search and Replace
+// n  <Space>sr   * <Lua 335: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Search and Replace
+// n  <Space>cF   * <Lua 236: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Format Injected Langs
+// v  <Space>cF   * <Lua 234: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Format Injected Langs
+// n  <Space>fM   * <Lua 229: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Open mini.files (cwd)
+// n  <Space>fm   * <Lua 228: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Open mini.files (Directory of Current File)
+// n  <Space>rs   * <Lua 227: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Find and replace text
+// n  <Space>rS   * <Lua 226: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Find and replace text in several files
+// n  <Space>cn   * <Lua 189: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Generate Annotations (Neogen)
+// n  <Space>tt   * <Lua 104: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Run File (Neotest)
+// n  <Space>t    * <Nop>
+//                  +test
+// n  <Space>tw   * <Lua 103: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Toggle Watch (Neotest)
+// n  <Space>tS   * <Lua 102: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Stop (Neotest)
+// n  <Space>tO   * <Lua 101: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Toggle Output Panel (Neotest)
+// n  <Space>to   * <Lua 100: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Show Output (Neotest)
+// n  <Space>ts   * <Lua 99: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Toggle Summary (Neotest)
+// n  <Space>tl   * <Lua 98: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Run Last (Neotest)
+// n  <Space>tr   * <Lua 97: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Run Nearest (Neotest)
+// n  <Space>tT   * <Lua 96: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Run All Test Files (Neotest)
+// x  #           * <Lua 7: vim/_defaults.lua:0>
+//                  :help v_#-default
+// o  %             <Plug>(MatchitOperationForward)
+// x  %             <Plug>(MatchitVisualForward)
+// n  %             <Plug>(MatchitNormalForward)
+// n  &           * :&&<CR>
+//                  :help &-default
+// x  *           * <Lua 3: vim/_defaults.lua:0>
+//                  :help v_star-default
+// o  ,           * <Lua 414: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// x  ,           * <Lua 458: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// n  ,           * <Lua 456: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// o  ;           * <Lua 218: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// x  ;           * <Lua 220: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// n  ;           * <Lua 219: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// n  <P          * <Plug>(YankyPutIndentBeforeShiftLeft)
+//                  Put Before and Indent Left
+// n  <p          * <Plug>(YankyPutIndentAfterShiftLeft)
+//                  Put and Indent Left
+// v  <           * <gv
+// n  =p          * <Plug>(YankyPutAfterFilter)
+//                  Put After Applying a Filter
+// n  =P          * <Plug>(YankyPutBeforeFilter)
+//                  Put Before Applying a Filter
+// n  >P          * <Plug>(YankyPutIndentBeforeShiftRight)
+//                  Put Before and Indent Right
+// n  >p          * <Plug>(YankyPutIndentAfterShiftRight)
+//                  Put and Indent Right
+// v  >           * >gv
+// x  @           * mode() ==# 'V' ? ':normal! @'.getcharstr().'<CR>' : '@'
+//                  :help v_@-default
+// o  F           * <Lua 453: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// x  F           * <Lua 452: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// n  F           * <Lua 447: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// n  H           * <Cmd>BufferLineCyclePrev<CR>
+//                  Prev Buffer
+// n  L           * <Cmd>BufferLineCycleNext<CR>
+//                  Next Buffer
+// o  N           * 'nN'[v:searchforward]
+//                  Prev Search Result
+// x  N           * 'nN'[v:searchforward]
+//                  Prev Search Result
+// n  N           * 'nN'[v:searchforward].'zv'
+//                  Prev Search Result
+// x  P           * <Plug>(YankyPutBefore)
+//                  Put Text Before Cursor
+// n  P           * <Plug>(YankyPutBefore)
+//                  Put Text Before Cursor
+// x  Q           * mode() ==# 'V' ? ':normal! @<C-R>=reg_recorded()<CR><CR>' : 'Q'
+//                  :help v_Q-default
+// x  R           * <Lua 123: ~/.config/nvim/lua/plugins/my_flash.lua:268>
+//                  Treesitter Search
+// o  R           * <Lua 122: ~/.config/nvim/lua/plugins/my_flash.lua:268>
+//                  Treesitter Search
+// n  S           * <Lua 125: ~/.config/nvim/lua/plugins/my_flash.lua:266>
+//                  Flash Treesitter
+// x  S           * <Lua 120: ~/.config/nvim/lua/plugins/my_flash.lua:266>
+//                  Flash Treesitter
+// o  S           * <Lua 119: ~/.config/nvim/lua/plugins/my_flash.lua:266>
+//                  Flash Treesitter
+// o  T           * <Lua 221: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// x  T           * <Lua 28: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// n  T           * <Lua 68: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// n  Y           * y$
+//                  :help Y-default
+// n  [t          * <Lua 239: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/editor.lua:363>
+//                  Previous Todo Comment
+// n  [[          * <Lua 934: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/illuminate.lua:34>
+//                  Prev Reference
+// o  [i          * <Cmd>lua MiniIndentscope.operator('top')<CR>
+//                  Go to indent scope top
+// x  [i          * <Cmd>lua MiniIndentscope.operator('top')<CR>
+//                  Go to indent scope top
+// n  [i          * <Cmd>lua MiniIndentscope.operator('top', true)<CR>
+//                  Go to indent scope top
+// n  [P          * <Plug>(YankyPutIndentBeforeLinewise)
+//                  Put Indented Before Cursor (Linewise)
+// n  [y          * <Plug>(YankyCycleForward)
+//                  Cycle Forward Through Yank History
+// n  [p          * <Plug>(YankyPutIndentBeforeLinewise)
+//                  Put Indented Before Cursor (Linewise)
+// n  [<Space>    * <Cmd>call append(line('.')-1, '')<CR>
+//                  Add 1 line before
+// n  [w          * <Lua 639: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:108>
+//                  Prev Warning
+// n  [e          * <Lua 641: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:108>
+//                  Prev Error
+// n  [B          * <Cmd>BufferLineMovePrev<CR>
+//                  Move buffer prev
+// n  [b          * <Cmd>BufferLineCyclePrev<CR>
+//                  Prev buffer
+// n  [q          * <Lua 255: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/editor.lua:324>
+//                  Previous Trouble/Quickfix Item
+// o  [h          * V<Cmd>lua MiniDiff.goto_hunk('prev')<CR>
+//                  Previous hunk
+// x  [h          * <Cmd>lua MiniDiff.goto_hunk('prev')<CR>
+//                  Previous hunk
+// n  [h          * <Cmd>lua MiniDiff.goto_hunk('prev')<CR>
+//                  Previous hunk
+// o  [H          * V<Cmd>lua MiniDiff.goto_hunk('first')<CR>
+//                  First hunk
+// x  [H          * <Cmd>lua MiniDiff.goto_hunk('first')<CR>
+//                  First hunk
+// n  [H          * <Cmd>lua MiniDiff.goto_hunk('first')<CR>
+//                  First hunk
+// o  [%            <Plug>(MatchitOperationMultiBackward)
+// x  [%            <Plug>(MatchitVisualMultiBackward)
+// n  [%            <Plug>(MatchitNormalMultiBackward)
+// n  [d          * <Lua 14: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:108>
+//                  Prev Diagnostic
+// n  ]t          * <Lua 240: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/editor.lua:362>
+//                  Next Todo Comment
+// n  ]]          * <Lua 1128: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/extras/editor/illuminate.lua:34>
+//                  Next Reference
+// o  ]i          * <Cmd>lua MiniIndentscope.operator('bottom')<CR>
+//                  Go to indent scope bottom
+// x  ]i          * <Cmd>lua MiniIndentscope.operator('bottom')<CR>
+//                  Go to indent scope bottom
+// n  ]i          * <Cmd>lua MiniIndentscope.operator('bottom', true)<CR>
+//                  Go to indent scope bottom
+// n  ]y          * <Plug>(YankyCycleBackward)
+//                  Cycle Backward Through Yank History
+// n  ]p          * <Plug>(YankyPutIndentAfterLinewise)
+//                  Put Indented After Cursor (Linewise)
+// n  ]P          * <Plug>(YankyPutIndentAfterLinewise)
+//                  Put Indented After Cursor (Linewise)
+// n  ]<Space>    * <Cmd>call append(line('.'), '')<CR>
+//                  Add 1 line after
+// n  ]w          * <Lua 640: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:108>
+//                  Next Warning
+// n  ]e          * <Lua 15: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:108>
+//                  Next Error
+// n  ]B          * <Cmd>BufferLineMoveNext<CR>
+//                  Move buffer next
+// n  ]b          * <Cmd>BufferLineCycleNext<CR>
+//                  Next buffer
+// n  ]q          * <Lua 248: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/editor.lua:338>
+//                  Next Trouble/Quickfix Item
+// o  ]H          * V<Cmd>lua MiniDiff.goto_hunk('last')<CR>
+//                  Last hunk
+// x  ]H          * <Cmd>lua MiniDiff.goto_hunk('last')<CR>
+//                  Last hunk
+// n  ]H          * <Cmd>lua MiniDiff.goto_hunk('last')<CR>
+//                  Last hunk
+// o  ]h          * V<Cmd>lua MiniDiff.goto_hunk('next')<CR>
+//                  Next hunk
+// x  ]h          * <Cmd>lua MiniDiff.goto_hunk('next')<CR>
+//                  Next hunk
+// n  ]h          * <Cmd>lua MiniDiff.goto_hunk('next')<CR>
+//                  Next hunk
+// o  ]%            <Plug>(MatchitOperationMultiForward)
+// x  ]%            <Plug>(MatchitVisualMultiForward)
+// n  ]%            <Plug>(MatchitNormalMultiForward)
+// n  ]d          * <Lua 642: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:108>
+//                  Next Diagnostic
+// o  ai          * <Cmd>lua MiniIndentscope.textobject(true)<CR>
+//                  Object scope with border
+// x  ai          * <Cmd>lua MiniIndentscope.textobject(true)<CR>
+//                  Object scope with border
+// o  al            <Lua 533: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1172>
+//                  Around last textobject
+// o  an            <Lua 532: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1172>
+//                  Around next textobject
+// x  al            <Lua 529: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1172>
+//                  Around last textobject
+// x  an            <Lua 528: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1172>
+//                  Around next textobject
+// o  a             <Lua 526: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1172>
+//                  Around textobject
+// x  a             <Lua 524: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1172>
+//                  Around textobject
+// x  a%            <Plug>(MatchitVisualTextObject)
+// o  f           * <Lua 264: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// x  f           * <Lua 417: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// n  f           * <Lua 371: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// x  gP          * <Plug>(YankyGPutBefore)
+//                  Put Text Before Selection
+// n  gp          * <Plug>(YankyGPutAfter)
+//                  Put Text After Selection
+// n  gP          * <Plug>(YankyGPutBefore)
+//                  Put Text Before Selection
+// x  gp          * <Plug>(YankyGPutAfter)
+//                  Put Text After Selection
+// n  gcO         * O<Esc>Vcx<Esc><Cmd>normal gcc<CR>fxa<BS>
+//                  Add Comment Above
+// n  gco         * o<Esc>Vcx<Esc><Cmd>normal gcc<CR>fxa<BS>
+//                  Add Comment Below
+// o  g]            <Lua 523: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1169>
+//                  Move to right "around"
+// x  g]            <Lua 522: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1169>
+//                  Move to right "around"
+// n  g]            <Lua 521: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1169>
+//                  Move to right "around"
+// o  g[            <Lua 520: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1168>
+//                  Move to left "around"
+// x  g[            <Lua 519: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1168>
+//                  Move to left "around"
+// n  g[            <Lua 518: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1168>
+//                  Move to left "around"
+// o  gh          * <Cmd>lua MiniDiff.textobject()<CR>
+//                  Hunk range textobject
+// x  gH          * <Lua 486: ~/.local/share/nvim/lazy/mini.diff/lua/mini/diff.lua:961>
+//                  Reset hunks
+// n  gH          * <Lua 485: ~/.local/share/nvim/lazy/mini.diff/lua/mini/diff.lua:961>
+//                  Reset hunks
+// x  gh          * <Lua 484: ~/.local/share/nvim/lazy/mini.diff/lua/mini/diff.lua:959>
+//                  Apply hunks
+// n  gh          * <Lua 27: ~/.local/share/nvim/lazy/mini.diff/lua/mini/diff.lua:959>
+//                  Apply hunks
+// o  g%            <Plug>(MatchitOperationBackward)
+// x  g%            <Plug>(MatchitVisualBackward)
+// n  g%            <Plug>(MatchitNormalBackward)
+// x  gal         * <Cmd>lua require('textcase').quick_replace('to_lower_case')<CR>
+//                  Convert to lower case
+// n  gal         * <Cmd>lua require('textcase').quick_replace('to_lower_case')<CR>
+//                  Convert to lower case
+// n  gaL         * <Cmd>lua require('textcase').lsp_rename('to_lower_case')<CR>
+//                  LSP rename to lower case
+// n  gaol        * <Cmd>lua require('textcase').operator('to_lower_case')<CR>
+//                  to lower case
+// x  gau         * <Cmd>lua require('textcase').quick_replace('to_upper_case')<CR>
+//                  Convert TO UPPER CASE
+// n  gau         * <Cmd>lua require('textcase').quick_replace('to_upper_case')<CR>
+//                  Convert TO UPPER CASE
+// n  gaU         * <Cmd>lua require('textcase').lsp_rename('to_upper_case')<CR>
+//                  LSP rename TO UPPER CASE
+// n  gaou        * <Cmd>lua require('textcase').operator('to_upper_case')<CR>
+//                  TO UPPER CASE
+// x  gap         * <Cmd>lua require('textcase').quick_replace('to_pascal_case')<CR>
+//                  Convert ToPascalCase
+// n  gap         * <Cmd>lua require('textcase').quick_replace('to_pascal_case')<CR>
+//                  Convert ToPascalCase
+// n  gaP         * <Cmd>lua require('textcase').lsp_rename('to_pascal_case')<CR>
+//                  LSP rename ToPascalCase
+// n  gaop        * <Cmd>lua require('textcase').operator('to_pascal_case')<CR>
+//                  ToPascalCase
+// x  gad         * <Cmd>lua require('textcase').quick_replace('to_dash_case')<CR>
+//                  Convert to-dash-case
+// n  gad         * <Cmd>lua require('textcase').quick_replace('to_dash_case')<CR>
+//                  Convert to-dash-case
+// n  gaD         * <Cmd>lua require('textcase').lsp_rename('to_dash_case')<CR>
+//                  LSP rename to-dash-case
+// n  gaod        * <Cmd>lua require('textcase').operator('to_dash_case')<CR>
+//                  to-dash-case
+// x  gas         * <Cmd>lua require('textcase').quick_replace('to_snake_case')<CR>
+//                  Convert to_snake_case
+// n  gas         * <Cmd>lua require('textcase').quick_replace('to_snake_case')<CR>
+//                  Convert to_snake_case
+// n  gaS         * <Cmd>lua require('textcase').lsp_rename('to_snake_case')<CR>
+//                  LSP rename to_snake_case
+// n  gaos        * <Cmd>lua require('textcase').operator('to_snake_case')<CR>
+//                  to_snake_case
+// x  gac         * <Cmd>lua require('textcase').quick_replace('to_camel_case')<CR>
+//                  Convert toCamelCase
+// n  gac         * <Cmd>lua require('textcase').quick_replace('to_camel_case')<CR>
+//                  Convert toCamelCase
+// n  gaC         * <Cmd>lua require('textcase').lsp_rename('to_camel_case')<CR>
+//                  LSP rename toCamelCase
+// n  gaoc        * <Cmd>lua require('textcase').operator('to_camel_case')<CR>
+//                  toCamelCase
+// x  gan         * <Cmd>lua require('textcase').quick_replace('to_constant_case')<CR>
+//                  Convert TO_CONSTANT_CASE
+// n  gan         * <Cmd>lua require('textcase').quick_replace('to_constant_case')<CR>
+//                  Convert TO_CONSTANT_CASE
+// n  gaN         * <Cmd>lua require('textcase').lsp_rename('to_constant_case')<CR>
+//                  LSP rename TO_CONSTANT_CASE
+// n  gaon        * <Cmd>lua require('textcase').operator('to_constant_case')<CR>
+//                  TO_CONSTANT_CASE
+// n  ga.         * <Cmd>TextCaseOpenTelescope<CR>
+//                  Telescope
+// x  ga.         * <Cmd>TextCaseOpenTelescope<CR>
+//                  Telescope
+// v  g<C-A>      * <Lua 161: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Increment
+// n  g<C-A>      * <Lua 160: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Increment
+// v  g<C-X>      * <Lua 156: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Decrement
+// n  g<C-X>      * <Lua 153: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Decrement
+// v  gsa         * <Lua 152: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Add Surrounding
+// n  gsd         * <Lua 151: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Delete Surrounding
+// n  gsa         * <Lua 150: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Add Surrounding
+// n  gsr         * <Lua 149: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Replace Surrounding
+// n  gsf         * <Lua 148: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Find Right Surrounding
+// n  gsF         * <Lua 147: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Find Left Surrounding
+// n  gsn         * <Lua 146: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Update `MiniSurround.config.n_lines`
+// n  gsh         * <Lua 143: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Highlight Surrounding
+// o  gc          * <Lua 13: vim/_defaults.lua:0>
+//                  Comment textobject
+// n  gcc         * <Lua 12: vim/_defaults.lua:0>
+//                  Toggle comment line
+// x  gc          * <Lua 11: vim/_defaults.lua:0>
+//                  Toggle comment
+// n  gc          * <Lua 10: vim/_defaults.lua:0>
+//                  Toggle comment
+// x  gx          * <Lua 9: vim/_defaults.lua:0>
+//                  Opens filepath or URI under cursor with the system handler (file explorer, web browser, …)
+// n  gx          * <Lua 8: vim/_defaults.lua:0>
+//                  Opens filepath or URI under cursor with the system handler (file explorer, web browser, …)
+// o  ii          * <Cmd>lua MiniIndentscope.textobject(false)<CR>
+//                  Object scope
+// x  ii          * <Cmd>lua MiniIndentscope.textobject(false)<CR>
+//                  Object scope
+// o  il            <Lua 535: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1172>
+//                  Inside last textobject
+// o  in            <Lua 534: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1172>
+//                  Inside next textobject
+// x  il            <Lua 531: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1172>
+//                  Inside last textobject
+// x  in            <Lua 530: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1172>
+//                  Inside next textobject
+// o  i             <Lua 527: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1172>
+//                  Inside textobject
+// x  i             <Lua 525: ~/.local/share/nvim/lazy/mini.ai/lua/mini/ai.lua:1172>
+//                  Inside textobject
+// x  j           * v:count == 0 ? 'gj' : 'j'
+//                  Down
+// n  j           * v:count == 0 ? 'gj' : 'j'
+//                  Down
+// x  k           * v:count == 0 ? 'gk' : 'k'
+//                  Up
+// n  k           * v:count == 0 ? 'gk' : 'k'
+//                  Up
+// o  n           * 'Nn'[v:searchforward]
+//                  Next Search Result
+// x  n           * 'Nn'[v:searchforward]
+//                  Next Search Result
+// n  n           * 'Nn'[v:searchforward].'zv'
+//                  Next Search Result
+// n  p           * <Plug>(YankyPutAfter)
+//                  Put Text After Cursor
+// x  p           * <Plug>(YankyPutAfter)
+//                  Put Text After Cursor
+// o  r           * <Lua 121: ~/.config/nvim/lua/plugins/my_flash.lua:267>
+//                  Remote Flash
+// n  s           * <Lua 126: ~/.config/nvim/lua/plugins/my_flash.lua:265>
+//                  Flash
+// o  s           * <Lua 118: ~/.config/nvim/lua/plugins/my_flash.lua:265>
+//                  Flash
+// x  s           * <Lua 116: ~/.config/nvim/lua/plugins/my_flash.lua:265>
+//                  Flash
+// o  t           * <Lua 455: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// x  t           * <Lua 349: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// n  t           * <Lua 77: ~/.local/share/nvim/lazy/flash.nvim/lua/flash/plugins/char.lua:118>
+// n  y           * <Plug>(YankyYank)
+//                  Yank Text
+// x  y           * <Plug>(YankyYank)
+//                  Yank Text
+// x  <M-i>       * <Lua 1365: ~/.local/share/nvim/lazy/vim-illuminate/lua/illuminate.lua:301>
+// o  <M-i>       * <Lua 1366: ~/.local/share/nvim/lazy/vim-illuminate/lua/illuminate.lua:301>
+// n  <M-p>       * <Lua 1523: ~/.local/share/nvim/lazy/vim-illuminate/lua/illuminate.lua:294>
+//                  Move to previous reference
+// n  <M-n>       * <Lua 341: ~/.local/share/nvim/lazy/vim-illuminate/lua/illuminate.lua:287>
+//                  Move to next reference
+// x  <Plug>(YankyPutBeforeFilterJoined) * <Lua 845: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyPutBeforeFilterJoined) * <Lua 832: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyPutBeforeFilter) * <Lua 1303: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyPutBeforeFilter) * <Lua 1135: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyPutBeforeShiftLeftJoined) * <Lua 1194: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyPutBeforeShiftLeftJoined) * <Lua 573: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyPutBeforeShiftLeft) * <Lua 572: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyPutBeforeShiftLeft) * <Lua 1174: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyPutBeforeShiftRightJoined) * <Lua 1196: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyPutBeforeShiftRightJoined) * <Lua 1173: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyPutBeforeShiftRight) * <Lua 1200: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyPutBeforeShiftRight) * <Lua 1020: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyPutBeforeBlockwiseJoined) * <Lua 1019: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:375>
+// n  <Plug>(YankyPutBeforeBlockwiseJoined) * <Lua 1091: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:371>
+// x  <Plug>(YankyPutBeforeBlockwise) * <Lua 833: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:367>
+// n  <Plug>(YankyPutBeforeBlockwise) * <Lua 1584: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:363>
+// x  <Plug>(YankyPutBeforeCharwiseJoined) * <Lua 994: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:359>
+// n  <Plug>(YankyPutBeforeCharwiseJoined) * <Lua 1316: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:355>
+// x  <Plug>(YankyPutBeforeCharwise) * <Lua 1202: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:351>
+// n  <Plug>(YankyPutBeforeCharwise) * <Lua 945: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:347>
+// x  <Plug>(YankyPutBeforeLinewiseJoined) * <Lua 1001: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:343>
+// n  <Plug>(YankyPutBeforeLinewiseJoined) * <Lua 624: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:339>
+// x  <Plug>(YankyPutBeforeLinewise) * <Lua 1572: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:335>
+// n  <Plug>(YankyPutBeforeLinewise) * <Lua 1578: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:331>
+// x  <Plug>(YankyPutBeforeJoined) * <Lua 1596: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:327>
+// n  <Plug>(YankyPutBeforeJoined) * <Lua 1608: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:323>
+// x  <Plug>(YankyPutBefore) * <Lua 1276: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:319>
+// n  <Plug>(YankyPutBefore) * <Lua 1615: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:315>
+// x  <Plug>(YankyGPutBeforeFilterJoined) * <Lua 1201: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyGPutBeforeFilterJoined) * <Lua 854: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyGPutBeforeFilter) * <Lua 1582: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyGPutBeforeFilter) * <Lua 1204: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyGPutBeforeShiftLeftJoined) * <Lua 946: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyGPutBeforeShiftLeftJoined) * <Lua 1024: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyGPutBeforeShiftLeft) * <Lua 1025: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyGPutBeforeShiftLeft) * <Lua 1086: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyGPutBeforeShiftRightJoined) * <Lua 823: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyGPutBeforeShiftRightJoined) * <Lua 999: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyGPutBeforeShiftRight) * <Lua 837: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyGPutBeforeShiftRight) * <Lua 1100: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyGPutBeforeBlockwiseJoined) * <Lua 1499: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:375>
+// n  <Plug>(YankyGPutBeforeBlockwiseJoined) * <Lua 1225: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:371>
+// x  <Plug>(YankyGPutBeforeBlockwise) * <Lua 1573: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:367>
+// n  <Plug>(YankyGPutBeforeBlockwise) * <Lua 802: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:363>
+// x  <Plug>(YankyGPutBeforeCharwiseJoined) * <Lua 688: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:359>
+// n  <Plug>(YankyGPutBeforeCharwiseJoined) * <Lua 756: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:355>
+// x  <Plug>(YankyGPutBeforeCharwise) * <Lua 754: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:351>
+// n  <Plug>(YankyGPutBeforeCharwise) * <Lua 918: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:347>
+// x  <Plug>(YankyGPutBeforeLinewiseJoined) * <Lua 803: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:343>
+// n  <Plug>(YankyGPutBeforeLinewiseJoined) * <Lua 601: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:339>
+// x  <Plug>(YankyGPutBeforeLinewise) * <Lua 955: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:335>
+// n  <Plug>(YankyGPutBeforeLinewise) * <Lua 765: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:331>
+// x  <Plug>(YankyGPutBeforeJoined) * <Lua 957: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:327>
+// n  <Plug>(YankyGPutBeforeJoined) * <Lua 956: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:323>
+// x  <Plug>(YankyGPutBefore) * <Lua 1073: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:319>
+// n  <Plug>(YankyGPutBefore) * <Lua 1074: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:315>
+// x  <Plug>(YankyGPutAfterFilterJoined) * <Lua 1075: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyGPutAfterFilterJoined) * <Lua 925: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyGPutAfterFilter) * <Lua 1068: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyGPutAfterFilter) * <Lua 1067: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyGPutAfterShiftLeftJoined) * <Lua 1066: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyGPutAfterShiftLeftJoined) * <Lua 1065: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyGPutAfterShiftLeft) * <Lua 1064: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyGPutAfterShiftLeft) * <Lua 1063: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyGPutAfterShiftRightJoined) * <Lua 1062: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyGPutAfterShiftRightJoined) * <Lua 1061: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyGPutAfterShiftRight) * <Lua 1060: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyGPutAfterShiftRight) * <Lua 1059: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyGPutAfterBlockwiseJoined) * <Lua 1029: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:375>
+// n  <Plug>(YankyGPutAfterBlockwiseJoined) * <Lua 1028: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:371>
+// x  <Plug>(YankyGPutAfterBlockwise) * <Lua 1027: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:367>
+// n  <Plug>(YankyGPutAfterBlockwise) * <Lua 1026: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:363>
+// x  <Plug>(YankyGPutAfterCharwiseJoined) * <Lua 1097: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:359>
+// n  <Plug>(YankyGPutAfterCharwiseJoined) * <Lua 1275: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:355>
+// x  <Plug>(YankyGPutAfterCharwise) * <Lua 1167: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:351>
+// n  <Plug>(YankyGPutAfterCharwise) * <Lua 813: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:347>
+// x  <Plug>(YankyGPutAfterLinewiseJoined) * <Lua 1356: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:343>
+// n  <Plug>(YankyGPutAfterLinewiseJoined) * <Lua 1040: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:339>
+// x  <Plug>(YankyGPutAfterLinewise) * <Lua 1041: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:335>
+// n  <Plug>(YankyGPutAfterLinewise) * <Lua 1039: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:331>
+// x  <Plug>(YankyGPutAfterJoined) * <Lua 1406: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:327>
+// n  <Plug>(YankyGPutAfterJoined) * <Lua 1144: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:323>
+// x  <Plug>(YankyGPutAfter) * <Lua 1223: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:319>
+// n  <Plug>(YankyGPutAfter) * <Lua 1583: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:315>
+// x  <Plug>(YankyPutAfterFilterJoined) * <Lua 1636: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyPutAfterFilterJoined) * <Lua 163: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyPutAfterFilter) * <Lua 927: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyPutAfterFilter) * <Lua 1058: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyPutAfterShiftLeftJoined) * <Lua 1037: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyPutAfterShiftLeftJoined) * <Lua 1036: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyPutAfterShiftLeft) * <Lua 1057: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyPutAfterShiftLeft) * <Lua 1633: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyPutAfterShiftRightJoined) * <Lua 906: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyPutAfterShiftRightJoined) * <Lua 1543: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyPutAfterShiftRight) * <Lua 860: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyPutAfterShiftRight) * <Lua 1392: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyPutAfterBlockwiseJoined) * <Lua 1434: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:375>
+// n  <Plug>(YankyPutAfterBlockwiseJoined) * <Lua 1038: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:371>
+// x  <Plug>(YankyPutAfterBlockwise) * <Lua 1056: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:367>
+// n  <Plug>(YankyPutAfterBlockwise) * <Lua 1049: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:363>
+// x  <Plug>(YankyPutAfterCharwiseJoined) * <Lua 1030: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:359>
+// n  <Plug>(YankyPutAfterCharwiseJoined) * <Lua 1031: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:355>
+// x  <Plug>(YankyPutAfterCharwise) * <Lua 1403: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:351>
+// n  <Plug>(YankyPutAfterCharwise) * <Lua 1547: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:347>
+// x  <Plug>(YankyPutAfterLinewiseJoined) * <Lua 1635: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:343>
+// n  <Plug>(YankyPutAfterLinewiseJoined) * <Lua 1055: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:339>
+// x  <Plug>(YankyPutAfterLinewise) * <Lua 1054: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:335>
+// n  <Plug>(YankyPutAfterLinewise) * <Lua 1053: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:331>
+// x  <Plug>(YankyPutAfterJoined) * <Lua 1052: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:327>
+// n  <Plug>(YankyPutAfterJoined) * <Lua 1051: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:323>
+// x  <Plug>(YankyPutAfter) * <Lua 1050: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:319>
+// n  <Plug>(YankyPutAfter) * <Lua 1048: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:315>
+// x  <Plug>(YankyPutIndentAfterFilterJoined) * <Lua 1047: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyPutIndentAfterFilterJoined) * <Lua 1046: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyPutIndentAfterFilter) * <Lua 1045: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyPutIndentAfterFilter) * <Lua 1021: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyPutIndentAfterShiftLeftJoined) * <Lua 938: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyPutIndentAfterShiftLeftJoined) * <Lua 951: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyPutIndentAfterShiftLeft) * <Lua 950: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyPutIndentAfterShiftLeft) * <Lua 507: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyPutIndentAfterShiftRightJoined) * <Lua 1114: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyPutIndentAfterShiftRightJoined) * <Lua 941: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyPutIndentAfterShiftRight) * <Lua 1418: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyPutIndentAfterShiftRight) * <Lua 1287: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyPutIndentAfterBlockwiseJoined) * <Lua 1632: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:375>
+// n  <Plug>(YankyPutIndentAfterBlockwiseJoined) * <Lua 1624: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:371>
+// x  <Plug>(YankyPutIndentAfterBlockwise) * <Lua 1623: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:367>
+// n  <Plug>(YankyPutIndentAfterBlockwise) * <Lua 1619: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:363>
+// x  <Plug>(YankyPutIndentAfterCharwiseJoined) * <Lua 1618: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:359>
+// n  <Plug>(YankyPutIndentAfterCharwiseJoined) * <Lua 1614: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:355>
+// x  <Plug>(YankyPutIndentAfterCharwise) * <Lua 1613: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:351>
+// n  <Plug>(YankyPutIndentAfterCharwise) * <Lua 1612: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:347>
+// x  <Plug>(YankyPutIndentAfterLinewiseJoined) * <Lua 1188: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:343>
+// n  <Plug>(YankyPutIndentAfterLinewiseJoined) * <Lua 1610: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:339>
+// x  <Plug>(YankyPutIndentAfterLinewise) * <Lua 1609: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:335>
+// n  <Plug>(YankyPutIndentAfterLinewise) * <Lua 1607: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:331>
+// x  <Plug>(YankyPutIndentAfterJoined) * <Lua 1606: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:327>
+// n  <Plug>(YankyPutIndentAfterJoined) * <Lua 1605: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:323>
+// x  <Plug>(YankyPutIndentAfter) * <Lua 1587: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:319>
+// n  <Plug>(YankyPutIndentAfter) * <Lua 1586: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:315>
+// x  <Plug>(YankyPutIndentBeforeFilterJoined) * <Lua 1352: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyPutIndentBeforeFilterJoined) * <Lua 1579: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyPutIndentBeforeFilter) * <Lua 588: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyPutIndentBeforeFilter) * <Lua 1504: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyPutIndentBeforeShiftLeftJoined) * <Lua 497: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyPutIndentBeforeShiftLeftJoined) * <Lua 1117: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyPutIndentBeforeShiftLeft) * <Lua 1357: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyPutIndentBeforeShiftLeft) * <Lua 1637: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyPutIndentBeforeShiftRightJoined) * <Lua 1234: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:396>
+// n  <Plug>(YankyPutIndentBeforeShiftRightJoined) * <Lua 1224: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:388>
+// x  <Plug>(YankyPutIndentBeforeShiftRight) * <Lua 1154: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:384>
+// n  <Plug>(YankyPutIndentBeforeShiftRight) * <Lua 1023: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:380>
+// x  <Plug>(YankyPutIndentBeforeBlockwiseJoined) * <Lua 1580: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:375>
+// n  <Plug>(YankyPutIndentBeforeBlockwiseJoined) * <Lua 164: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:371>
+// x  <Plug>(YankyPutIndentBeforeBlockwise) * <Lua 165: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:367>
+// n  <Plug>(YankyPutIndentBeforeBlockwise) * <Lua 166: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:363>
+// x  <Plug>(YankyPutIndentBeforeCharwiseJoined) * <Lua 167: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:359>
+// n  <Plug>(YankyPutIndentBeforeCharwiseJoined) * <Lua 168: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:355>
+// x  <Plug>(YankyPutIndentBeforeCharwise) * <Lua 169: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:351>
+// n  <Plug>(YankyPutIndentBeforeCharwise) * <Lua 170: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:347>
+// x  <Plug>(YankyPutIndentBeforeLinewiseJoined) * <Lua 171: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:343>
+// n  <Plug>(YankyPutIndentBeforeLinewiseJoined) * <Lua 172: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:339>
+// x  <Plug>(YankyPutIndentBeforeLinewise) * <Lua 173: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:335>
+// n  <Plug>(YankyPutIndentBeforeLinewise) * <Lua 174: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:331>
+// x  <Plug>(YankyPutIndentBeforeJoined) * <Lua 175: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:327>
+// n  <Plug>(YankyPutIndentBeforeJoined) * <Lua 176: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:323>
+// x  <Plug>(YankyPutIndentBefore) * <Lua 177: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:319>
+// n  <Plug>(YankyPutIndentBefore) * <Lua 178: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:315>
+// x  <Plug>(YankyYank) * <Lua 179: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:275>
+// n  <Plug>(YankyYank) * <Lua 180: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:275>
+// n  <Plug>(YankyNextEntry) * <Lua 181: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:301>
+// n  <Plug>(YankyPreviousEntry) * <Lua 182: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:297>
+// n  <Plug>(YankyCycleBackward) * <Lua 183: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:293>
+// n  <Plug>(YankyCycleForward) * <Lua 184: ~/.local/share/nvim/lazy/yanky.nvim/lua/yanky.lua:289>
+// n  <M-S-Right> * <Cmd>BufferLineCycleNext<CR>
+//                  Next buffer
+// n  <M-S-Left>  * <Cmd>BufferLineCyclePrev<CR>
+//                  Prev buffer
+// n  <M-Right>   * <C-W>l
+//                  Go to right window
+// n  <M-Up>      * <C-W>k
+//                  Go to upper window
+// n  <M-Down>    * <C-W>j
+//                  Go to lower window
+// n  <M-Left>    * <C-W>h
+//                  Go to left window
+// s  <S-Tab>     * <Lua 675: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:189>
+//                  Jump Previous
+// n  <C-_>       * <Lua 671: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:162>
+//                  which_key_ignore
+// n  <C-/>       * <Lua 670: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:161>
+//                  Terminal (Root Dir)
+// s  <C-S>       * <Cmd>w<CR><Esc>
+//                  Save File
+// n  <C-S>       * <Cmd>w<CR><Esc>
+//                  Save File
+// x  <C-S>       * <Cmd>w<CR><Esc>
+//                  Save File
+// n  <C-Right>   * e
+// n  <C-Left>    * b
+// n  <C-Down>    * j
+// n  <C-Up>      * k
+// n  <C-K>       * <C-W>k
+//                  Go to Upper Window
+// n  <C-J>       * <C-W>j
+//                  Go to Lower Window
+// n  <C-H>       * <C-W>h
+//                  Go to Left Window
+// x  <Up>        * v:count == 0 ? 'gk' : 'k'
+//                  Up
+// n  <Up>        * v:count == 0 ? 'gk' : 'k'
+//                  Up
+// x  <Down>      * v:count == 0 ? 'gj' : 'j'
+//                  Down
+// n  <Down>      * v:count == 0 ? 'gj' : 'j'
+//                  Down
+// n  <C-B>       * <Lua 44: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/ui.lua:272>
+//                  Scroll Backward
+// n  <C-F>       * <Lua 43: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/ui.lua:271>
+//                  Scroll Forward
+// s  <C-B>       * <Lua 42: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/ui.lua:272>
+//                  Scroll Backward
+// s  <C-F>       * <Lua 40: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/ui.lua:271>
+//                  Scroll Forward
+// n  <M-k>       * <Cmd>execute 'move .-' . (v:count1 + 1)<CR>==
+//                  Move Up
+// n  <M-j>       * <Cmd>execute 'move .+' . v:count1<CR>==
+//                  Move Down
+// n  <M-l>       * <Cmd>lua MiniMove.move_line('right')<CR>
+//                  Move line right
+// n  <M-h>       * <Cmd>lua MiniMove.move_line('left')<CR>
+//                  Move line left
+// v  <M-k>       * :<C-U>execute "'<,'>move '<-" . (v:count1 + 1)<CR>gv=gv
+//                  Move Up
+// v  <M-j>       * :<C-U>execute "'<,'>move '>+" . v:count1<CR>gv=gv
+//                  Move Down
+// x  <M-l>       * <Cmd>lua MiniMove.move_selection('right')<CR>
+//                  Move right
+// x  <M-h>       * <Cmd>lua MiniMove.move_selection('left')<CR>
+//                  Move left
+// x  <Plug>(MatchitVisualTextObject)   <Plug>(MatchitVisualMultiBackward)o<Plug>(MatchitVisualMultiForward)
+// o  <Plug>(MatchitOperationMultiForward) * :<C-U>call matchit#MultiMatch("W",  "o")<CR>
+// o  <Plug>(MatchitOperationMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "o")<CR>
+// x  <Plug>(MatchitVisualMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>m'gv``
+// x  <Plug>(MatchitVisualMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>m'gv``
+// n  <Plug>(MatchitNormalMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>
+// n  <Plug>(MatchitNormalMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>
+// o  <Plug>(MatchitOperationBackward) * :<C-U>call matchit#Match_wrapper('',0,'o')<CR>
+// o  <Plug>(MatchitOperationForward) * :<C-U>call matchit#Match_wrapper('',1,'o')<CR>
+// x  <Plug>(MatchitVisualBackward) * :<C-U>call matchit#Match_wrapper('',0,'v')<CR>m'gv``
+// x  <Plug>(MatchitVisualForward) * :<C-U>call matchit#Match_wrapper('',1,'v')<CR>:if col("''") != col("$") | exe ":normal! m'" | endif<CR>gv``
+// n  <Plug>(MatchitNormalBackward) * :<C-U>call matchit#Match_wrapper('',0,'n')<CR>
+// n  <Plug>(MatchitNormalForward) * :<C-U>call matchit#Match_wrapper('',1,'n')<CR>
+// n  <C-W><Space> * <Lua 76: ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/editor.lua:227>
+//                  Window Hydra Mode (which-key)
+// n  <Plug>PlenaryTestFile * :lua require('plenary.test_harness').test_file(vim.fn.expand("%:p"))<CR>
+// v  <C-X>       * <Lua 159: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Decrement
+// v  <C-A>       * <Lua 158: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Increment
+// n  <C-X>       * <Lua 157: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Decrement
+// n  <C-A>       * <Lua 155: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:121>
+//                  Increment
+// n  <C-W><C-D>    <C-W>d
+//                  Show diagnostics under the cursor
+// n  <C-W>d      * <Lua 16: vim/_defaults.lua:0>
+//                  Show diagnostics under the cursor
+// n  <C-L>       * <C-W>l
+//                  Go to Right Window
