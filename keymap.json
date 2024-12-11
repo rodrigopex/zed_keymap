@@ -23,9 +23,11 @@
     "use_layout_keys": true,
     "bindings": {
       "space space": "file_finder::Toggle",
-      "enter": ["workspace::SendKeystrokes", "[ x"],
-      "backspace": ["workspace::SendKeystrokes", "] x"],
-      "space e": ["workspace::SendKeystrokes", "cmd-b"]
+      "enter": "editor::SelectLargerSyntaxNode",
+      "backspace": "editor::SelectSmallerSyntaxNode",
+      "space e": ["workspace::SendKeystrokes", "cmd-b"],
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown"
     }
   },
   {
@@ -34,6 +36,8 @@
     "bindings": {
       "space space": "file_finder::Toggle",
       // File actions
+      "] space": ["workspace::SendKeystrokes", "o ctrl-c up"],
+      "[ space": ["workspace::SendKeystrokes", "shift-o ctrl-c down"],
       "space f s": "workspace::Save",
       "space f r": "projects::OpenRecent",
       "enter": "editor::SelectLargerSyntaxNode",
